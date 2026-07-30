@@ -1,0 +1,32 @@
+export const members = [
+  {
+    name: "Zhenyu “Bella” Chen",
+    surname: "Chen",
+    role: "AI and Software Engineer",
+    title: "M.S. in Computer Science, Machine Learning",
+    image: "/images/bella.jpg",
+    website: "https://zchen868.github.io/",
+    bio: "Bella builds AI evaluation systems, full-stack applications, and machine-learning projects that connect research ideas with usable products. Her work spans agent evaluation, RAG systems, applied machine learning, and research infrastructure.",
+    interests: ["Agentic-AI evaluation", "RAG systems", "Applied machine learning", "Full-stack research infrastructure"],
+  },
+  {
+    name: "Ruohan “Fleur” Feng",
+    surname: "Feng",
+    role: "Researcher in Cognitive Science and Machine Learning",
+    title: "Ph.D. Candidate, Cognition & Brain Science · M.S. Student, Computer Science",
+    image: "/images/ruohan.png",
+    website: "https://rfeng77.github.io/",
+    bio: "Ruohan studies unconscious cognitive and affective processes, including emotion regulation, mind-wandering, intuitive problem solving, and mental health. She uses computational modeling with behavioral and neurophysiological data.",
+    interests: ["Computational cognition", "Affective processes", "Mental health", "Human–AI interaction"],
+  },
+  {
+    name: "Yinqi Huang",
+    surname: "Huang",
+    role: "Research Lead / Ph.D. Candidate in Cognitive Neuroscience",
+    title: "Ph.D. Candidate in Cognitive Neuroscience",
+    image: "/images/yinqi.jpg",
+    website: "https://yinqihuang.github.io/",
+    bio: "Yinqi studies cognition in naturalistic environments using computational models. His work examines prediction and mismatch detection, multisensory navigation in virtual reality, and motor learning in surgical-robot teleoperation.",
+    interests: ["Embodied cognition", "Control theory", "Virtual reality & EEG", "Human–robot interaction"],
+  },
+].sort((a, b) => a.surname.localeCompare(b.surname));
