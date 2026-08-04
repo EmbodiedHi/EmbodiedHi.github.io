@@ -55,9 +55,9 @@ The website deploys to GitHub Pages when changes reach `main`. In repository Set
 
 Edit the structured arrays in `src/data.ts`. Add optimized images under `public/images/`. The homepage scene is original procedural geometry and requires no external model; edit `src/scene/HeroScene.tsx` to change it.
 
-## Replacing Vineet Upadhyan’s portrait
+## Vineet Upadhyan’s portrait
 
-Add the final portrait to `public/images/team/`, then update Vineet’s `image` field in `src/data.ts`. Keep the documented alt text accurate.
+Vineet’s portrait is stored at `public/images/team/vineet-upadhyan.jpg`; its path and alt text are maintained in `src/data.ts`.
 
 ## Asset licensing
 

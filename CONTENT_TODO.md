@@ -1,6 +1,5 @@
 # Content TODO
 
-- Replace `public/images/team/vineet-upadhyan-placeholder.svg` with Vineet Upadhyan’s final portrait.
 - Verify Vineet’s affiliation, preferred role title, and optional public links.
 - Confirm whether EmbodiedHi has a formal institutional affiliation; public copy intentionally avoids claiming one.
 - Confirm the preferred public contact email. The current static mail link points to Yinqi Huang’s publicly listed Georgia Tech address.
