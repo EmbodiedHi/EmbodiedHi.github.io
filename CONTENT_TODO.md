@@ -1,9 +1,10 @@
-# Content to confirm
+# Content TODO
 
-- Confirm the final institutional affiliation and whether this collective is formally affiliated with Georgia Tech.
-- Confirm the final lab contact email; the current address is Ruohan Feng’s public Georgia Tech email.
-- Confirm whether “Research Lead” should remain in Yinqi Huang’s editable role label.
-- Add Bella Chen’s preferred professional email and publication records if applicable.
-- Verify DOI and resource links for the full publication list before public launch.
-- Confirm whether recruitment, participation, and dedicated project pages are needed.
-- Review news dates and add future announcements only after public verification.
+- Replace `public/images/team/vineet-upadhyan-placeholder.svg` with Vineet Upadhyan’s final portrait.
+- Verify Vineet’s affiliation, preferred role title, and optional public links.
+- Confirm whether EmbodiedHi has a formal institutional affiliation; public copy intentionally avoids claiming one.
+- Confirm the preferred public contact email. The current static mail link points to Yinqi Huang’s publicly listed Georgia Tech address.
+- Supply owned research images for VR navigation, driving tasks, EEG, and surgical-robot work if visual documentation should replace the original diagrams.
+- Verify DOI/full-text links and correct any publication metadata before launch.
+- Verify exact dates and destinations for news items before adding external links.
+- Re-check member websites when inaccessible details become available; no unavailable biography fields were invented.

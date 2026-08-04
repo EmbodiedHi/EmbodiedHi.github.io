@@ -1,98 +1,72 @@
-# vinext-starter
+# Embodied Human Intelligence
 
-A clean full-stack starter running on
-[vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
-Drizzle support.
+Public academic website presenting research themes, collaborators, publications, and news related to embodied cognition and human interaction with intelligent systems.
 
-## Prerequisites
+## Live website
 
-- Node.js `>=22.13.0`
+https://embodiedhi.github.io/
 
-## Quick Start
+## Technology
+
+Vite, React, TypeScript, Three.js, semantic HTML, and CSS. The build is a fully static multi-page site.
+
+## Requirements
+
+- Node.js 22
+- pnpm 11.9
+
+## Local development
 
 ```bash
-npm install
-npm run dev
-npm run build
+pnpm install --frozen-lockfile
+pnpm dev
 ```
 
-This starter does not use `wrangler.jsonc`.
+## Production build and preview
 
-## Included Shape
-
-- edit site code under `app/`
-- `.openai/hosting.json` declares optional Sites D1 and R2 bindings
-- `vite.config.ts` simulates declared bindings for local development
-- `db/schema.ts` starts intentionally empty
-- `examples/d1/` contains an optional D1 example surface
-- `drizzle.config.ts` supports local migration generation when needed
-
-## Workspace Auth Headers
-
-OpenAI workspace sites can read the current user's email from
-`oai-authenticated-user-email`.
-
-SIWC-authenticated workspace sites may also receive
-`oai-authenticated-user-full-name` when the user's SIWC profile has a non-empty
-`name` claim. The full-name value is percent-encoded UTF-8 and is accompanied by
-`oai-authenticated-user-full-name-encoding: percent-encoded-utf-8`.
-
-Treat the full name as optional and fall back to email when it is absent:
-
-```tsx
-import { headers } from "next/headers";
-
-export default async function Home() {
-  const requestHeaders = await headers();
-  const email = requestHeaders.get("oai-authenticated-user-email");
-  const encodedFullName = requestHeaders.get("oai-authenticated-user-full-name");
-  const fullName =
-    encodedFullName &&
-    requestHeaders.get("oai-authenticated-user-full-name-encoding") ===
-      "percent-encoded-utf-8"
-      ? decodeURIComponent(encodedFullName)
-      : null;
-
-  const displayName = fullName ?? email;
-  // ...
-}
+```bash
+pnpm build
+pnpm preview
 ```
 
-## Optional Dispatch-Owned ChatGPT Sign-In
+## Validation
 
-Import the ready-to-use helpers from `app/chatgpt-auth.ts` when the site needs
-optional or required ChatGPT sign-in:
+```bash
+pnpm lint
+pnpm typecheck
+pnpm build
+pnpm test
+```
 
-- Use `getChatGPTUser()` for optional signed-in UI.
-- Use `requireChatGPTUser(returnTo)` for server-rendered pages that should send
-  anonymous visitors through Sign in with ChatGPT.
-- Use `chatGPTSignInPath(returnTo)` and `chatGPTSignOutPath(returnTo)` for
-  browser links or actions.
-- Pass a same-origin relative `returnTo` path for the destination after sign-in
-  or sign-out. The helper validates and safely encodes it.
-- Mark protected pages with `export const dynamic = "force-dynamic"` because
-  they depend on per-request identity headers.
+## Deployment
 
-Dispatch owns `/signin-with-chatgpt`, `/signout-with-chatgpt`, `/callback`, the
-OAuth cookies, and identity header injection. Do not implement app routes for
-those reserved paths. Routes that do not import and call the helper remain
-anonymous-compatible.
+The website deploys to GitHub Pages when changes reach `main`. In repository Settings → Pages, set the publishing source to **GitHub Actions**.
 
-SIWC establishes identity only; it does not prove workspace membership. Use the
-Sites hosting platform's access policy controls for workspace-wide restrictions,
-or enforce explicit server-side membership or allowlist checks.
+## Project structure
 
-Use SIWC for account pages, user-specific dashboards, saved records, and write
-actions tied to the current ChatGPT user. Leave public content anonymous.
+- `src/main.tsx`: static route views and shared site shell
+- `src/data.ts`: editable members, research, publications, and news
+- `src/scene/HeroScene.tsx`: lazy-loaded Three.js hero
+- `src/styles.css`: visual and responsive system
+- `public/`: identity, portraits, metadata, and other static assets
+- `research/`, `team/`, `publications/`, `news/`: real static route entry points
 
-## Useful Commands
+## Updating content
 
-- `npm run dev`: start local development
-- `npm run build`: verify the vinext build output
-- `npm test`: build the starter and verify its rendered loading skeleton
-- `npm run db:generate`: generate Drizzle migrations after schema changes
+Edit the structured arrays in `src/data.ts`. Add optimized images under `public/images/`. The homepage scene is original procedural geometry and requires no external model; edit `src/scene/HeroScene.tsx` to change it.
 
-## Learn More
+## Replacing Vineet Upadhyan’s portrait
 
-- [vinext Documentation](https://github.com/cloudflare/vinext)
-- [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
+Add the final portrait to `public/images/team/`, then update Vineet’s `image` field in `src/data.ts`. Keep the documented alt text accurate.
+
+## Asset licensing
+
+See `ASSET_CREDITS.md` and `ASSET_AUDIT.md`.
+
+## Accessibility
+
+The site includes semantic landmarks, skip navigation, keyboard-visible focus, an accessible mobile menu, diagram descriptions, reduced-motion fallbacks, and a textual equivalent beside the decorative WebGL scene.
+
+## License
+
+No repository license is currently declared. All rights remain with their respective owners.
