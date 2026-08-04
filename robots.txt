@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://embodiedhi.github.io/sitemap.xml

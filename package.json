@@ -6,8 +6,10 @@
   "packageManager": "pnpm@11.9.0",
   "engines": { "node": ">=22" },
   "scripts": {
+    "prebuild": "node scripts/prepare-pages-build.mjs",
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "node scripts/sync-pages-root.mjs",
     "preview": "vite preview",
     "lint": "tsc --noEmit",
     "typecheck": "tsc --noEmit",
