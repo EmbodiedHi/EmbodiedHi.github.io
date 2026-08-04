@@ -15,7 +15,7 @@ export const research = [
 
 export type Publication = {title:string;authors:string[];year?:number;venue:string;status:"published"|"preprint"|"under-review"|"in-preparation"|"conference";links?:Record<string,string>;featured?:boolean};
 export const publications: Publication[] = [
-  {title:"Bayesian cue combination best predicts straight-line distance estimation with translated visual landmarks",authors:["Vishwanath, A.","Huang, Y.","Wilson, R. C."],year:2025,venue:"Neuropsychologia",status:"published",featured:true},
+  {title:"Bayesian cue combination best predicts straight-line distance estimation with translated visual landmarks",authors:["Vishwanath, A.","Watson, M. F.","Gin, M. K.","Markham, D. C.","Huang, Y.","Du, Y. K.","Ekstrom, A. D.","& Wilson, R. C."],year:2025,venue:"Neuropsychologia",status:"published",links:{doi:"https://doi.org/10.1016/j.neuropsychologia.2025.109351"},featured:true},
   {title:"The application of the BERTopic model in natural language processing: In-depth text topic modeling",authors:["Ou, Y.","Zhang, P.","Yu, J.","Li, M.","Su, S.","Zhang, M.","Feng, R.","Sun, F.","Wu, J."],year:2025,venue:"ICCECE · IEEE",status:"published"},
   {title:"The association between mindfulness, psychological flexibility, and rumination in predicting mental health and well-being among university students using machine learning and structural equation modeling",authors:["Feng, R.","Mishra, V.","Hao, X.","Verhaeghen, P."],year:2024,venue:"Machine Learning with Applications",status:"published",featured:true},
   {title:"Adaptation and validation of the Mindful Student Questionnaire in Chinese",authors:["Wang, Q.","Wu, Y.","Feng, R.","Hao, X.","Felver, J. C.","Zhang, Y.","Razza, R."],year:2024,venue:"Mindfulness",status:"published"},
